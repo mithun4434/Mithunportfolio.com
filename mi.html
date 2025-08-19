@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Portfolio</title>
+
+  <!-- Tailwind CDN (quick static dev) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* small custom tweaks */
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    .glass { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(8px); }
+    .blob { filter: blur(48px); opacity: .85; mix-blend-mode: screen; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.06); }
+    .underline-anim::after { content:""; display:block; height:2px; width:0; background:linear-gradient(90deg,#7c3aed,#ec4899,#fb7185); transition:width .28s ease; }
+    .underline-anim:hover::after { width:100%; }
+    /* responsive hero image area */
+    @media (min-width:768px){ .hero-grid{ grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body class="bg-zinc-950 text-white">
+
+<!-- ====== NAV ====== -->
+<header class="fixed inset-x-0 top-4 z-40 flex justify-center pointer-events-none">
+  <div class="w-full max-w-6xl px-4 pointer-events-auto">
+    <div class="glass rounded-2xl px-4 py-2 flex items-center justify-between">
+      <a href="#home" class="font-semibold tracking-tight">MITHUN PORTFOLIO</a>
+      <nav class="hidden md:flex gap-6 text-zinc-300 text-sm">
+        <a href="#work" class="group"><span class="underline-anim">Work</span></a>
+        <a href="#about" class="group"><span class="underline-anim">About</span></a>
+        <a href="#services" class="group"><span class="underline-anim">Services</span></a>
+        <a href="#contact" class="group"><span class="underline-anim">Contact</span></a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="#" class="hidden md:inline-flex items-center gap-2 rounded-xl border px-3 py-1 text-sm text-zinc-200">Resume ↗</a>
+        <button id="mobileToggle" class="md:hidden px-2 py-1 bg-white/5 rounded">☰</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- background blobs -->
+<div aria-hidden class="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-gradient-to-tr from-indigo-500/40 via-fuchsia-500/30 to-rose-500/30 blob"></div>
+<div aria-hidden class="absolute -right-12 top-40 h-[30rem] w-[30rem] rounded-full bg-gradient-to-tr from-emerald-400/20 via-cyan-400/20 to-indigo-400/20 blob"></div>
+
+<main class="relative pt-24">
+
+  <!-- HERO -->
+  <section id="home" class="min-h-[84vh] flex items-center">
+    <div class="w-full max-w-6xl mx-auto px-4">
+      <div class="grid gap-10 hero-grid items-center">
+        <div class="">
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
+            About me
+          </div>
+
+          <h1 class="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight">Mithun S</h1>
+          <p class="mt-2 text-lg text-zinc-300">Editor • Developer • Gamer</p>
+          <p class="mt-4 max-w-xl text-zinc-400">I craft playful, performant web experiences that feel alive — motion, micro-interactions and clean UI.</p>
+
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <a href="#work" class="rounded-xl bg-white/6 px-4 py-2 text-sm">See my work →</a>
+            <a href="#contact" class="rounded-xl border px-4 py-2 text-sm">Contact me</a>
+            <div class="ml-2 flex items-center gap-3 text-zinc-300">
+              <a href="http://www.youtube.com/" title="GitHub">GitHub</a>
+              <a href="http://www.youtube.com/" title="LinkedIn">LinkedIn</a>
+              <a href="mailto:you@example.com" title="Email">Email</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="group card rounded-3xl p-1 overflow-hidden border border-white/6 shadow-2xl">
+            <div class="aspect-square rounded-2xl bg-zinc-900 flex items-center justify-center">
+              <div class="text-center px-6">
+                <div class="uppercase text-xs tracking-widest text-zinc-400">Featured Reel</div>
+                <div class="mt-2 text-2xl font-semibold">Motion • Web • Brand</div>
+                <div class="mt-2 text-zinc-400">Drop your hero image or animation here</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="py-24">
+    <div class="w-full max-w-6xl mx-auto px-4">
+      <div class="">
+        <h2 class="text-3xl md:text-4xl font-semibold">Selected Work</h2>
+        <p class="mt-2 text-zinc-400 max-w-2xl">A mix of client projects and personal explorations focused on brand, motion, and delightful UI.</p>
+      </div>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- project cards -->
+        <article class="card rounded-2xl p-4">
+          <div class="h-40 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+          <h3 class="mt-4 font-semibold">Neon Grooves</h3>
+          <p class="mt-2 text-sm text-zinc-400">Interactive audio-reactive visualizer for a DJ collective.</p>
+          <div class="mt-3 flex gap-2 text-xs text-zinc-300">
+            <span class="px-2 py-1 rounded-full border">WebGL</span>
+            <span class="px-2 py-1 rounded-full border">Three.js</span>
+          </div>
+        </article>
+
+        <article class="card rounded-2xl p-4">
+          <div class="h-40 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+          <h3 class="mt-4 font-semibold">Saffron Bites</h3>
+          <p class="mt-2 text-sm text-zinc-400">Crisp brand + site for a modern Indian kitchen.</p>
+        </article>
+
+        <article class="card rounded-2xl p-4">
+          <div class="h-40 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+          <h3 class="mt-4 font-semibold">Flow State</h3>
+          <p class="mt-2 text-sm text-zinc-400">Fluid product analytics with buttery micro-interactions.</p>
+        </article>
+
+        <article class="card rounded-2xl p-4">
+          <div class="h-40 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+          <h3 class="mt-4 font-semibold">Trekr</h3>
+          <p class="mt-2 text-sm text-zinc-400">Minimal hiking app with offline topo maps.</p>
+        </article>
+
+        <article class="card rounded-2xl p-4">
+          <div class="h-40 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+          <h3 class="mt-4 font-semibold">Monk & Co</h3>
+          <p class="mt-2 text-sm text-zinc-400">Luxury storefront with 3D shoe try-ons.</p>
+        </article>
+
+        <article class="card rounded-2xl p-4">
+          <div class="h-40 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+          <h3 class="mt-4 font-semibold">Opal Studio</h3>
+          <p class="mt-2 text-sm text-zinc-400">Headless portfolio with rich motion and custom CMS.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24">
+    <div class="w-full max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-8">
+      <div class="md:col-span-2">
+        <h2 class="text-3xl md:text-4xl font-semibold">About</h2>
+        <p class="mt-3 text-zinc-400">I blend design, code, and motion to build websites that people remember. I love clean typography, bold color, and subtle details that reward curiosity.</p>
+
+        <div class="mt-6 text-sm text-zinc-300 space-y-2">
+          <div>✉️ <a href="mailto:you@example.com" class="text-zinc-300">you@example.com</a></div>
+          <div>📞 +91 98765 43210</div>
+          <div>📍 Chennai, India</div>
+        </div>
+      </div>
+
+      <div class="md:col-span-3 grid sm:grid-cols-2 gap-4">
+        <div class="card rounded-2xl p-4">
+          <h4 class="font-semibold">Web Design</h4>
+          <div class="h-24 mt-3 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+        </div>
+        <div class="card rounded-2xl p-4">
+          <h4 class="font-semibold">Brand Systems</h4>
+          <div class="h-24 mt-3 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+        </div>
+        <div class="card rounded-2xl p-4">
+          <h4 class="font-semibold">Frontend Dev</h4>
+          <div class="h-24 mt-3 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+        </div>
+        <div class="card rounded-2xl p-4">
+          <h4 class="font-semibold">Motion / 3D</h4>
+          <div class="h-24 mt-3 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 bg-[linear-gradient(180deg,#0000,#0006)]">
+    <div class="w-full max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold">Services</h2>
+      <p class="mt-2 text-zinc-400 max-w-2xl">From concept to polished shipping build—design, product UI and motion systems.</p>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="card rounded-3xl p-6 hover:-translate-y-1 transition transform">
+          <h3 class="font-semibold">Brand & Identity</h3>
+          <p class="mt-2 text-zinc-400">Logo systems, style guides, and visual language that scales.</p>
+        </div>
+        <div class="card rounded-3xl p-6 hover:-translate-y-1 transition transform">
+          <h3 class="font-semibold">Web & Product UI</h3>
+          <p class="mt-2 text-zinc-400">Design + code for marketing sites and production apps.</p>
+        </div>
+        <div class="card rounded-3xl p-6 hover:-translate-y-1 transition transform">
+          <h3 class="font-semibold">Motion & Micro-interactions</h3>
+          <p class="mt-2 text-zinc-400">Delightful transitions, scroll-tied moments, and subtle polish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24">
+    <div class="w-full max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-semibold">Let’s build something</h2>
+        <p class="mt-3 text-zinc-400">Tell me about your project, timeline, and goals. I’ll get back within 48 hours.</p>
+
+        <div class="mt-6 space-y-3 text-sm text-zinc-300">
+          <a href="mailto:you@example.com" class="inline-flex items-center gap-2"><span class="underline-anim">Send an email</span> →</a>
+          <div>📞 +91 98765 43210</div>
+          <div>📍 Chennai, India</div>
+        </div>
+      </div>
+
+      <form class="card rounded-3xl p-6">
+        <div class="grid gap-4">
+          <input placeholder="Your name" class="rounded-xl border border-white/6 bg-black/30 px-3 py-2 outline-none" />
+          <input placeholder="Email" class="rounded-xl border border-white/6 bg-black/30 px-3 py-2 outline-none" />
+          <textarea rows="5" placeholder="Project details" class="rounded-xl border border-white/6 bg-black/30 px-3 py-2 outline-none"></textarea>
+          <button type="button" class="rounded-xl bg-white/6 px-4 py-2">Send message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/6 py-10 mt-10">
+  <div class="w-full max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-sm text-zinc-400 gap-4">
+    <div>© <span id="year"></span> Mithun S. All rights reserved.</div>
+    <div class="flex gap-4">
+      <a href="#" class="hover:text-white">GitHub</a>
+      <a href="#" class="hover:text-white">LinkedIn</a>
+      <a href="mailto:you@example.com" class="hover:text-white">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // small helpers
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile nav toggle (simple)
+  const mobileToggle = document.getElementById('mobileToggle');
+  mobileToggle?.addEventListener('click', () => {
+    const menu = document.querySelector('header nav');
+    if (!menu) return;
+    menu.classList.toggle('hidden');
+  });
+
+  // subtle parallax for blobs
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    document.querySelectorAll('.blob').forEach((b, i) => {
+      b.style.transform = `translateY(${y * (i === 0 ? -0.06 : -0.03)}px)`;
+    });
+  });
+</script>
+
+</body>
+</html>

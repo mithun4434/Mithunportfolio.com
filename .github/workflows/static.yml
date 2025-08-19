@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modern Creative Portfolio</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+@keyframes marquee {0% {transform: translateX(0)} 100% {transform: translateX(-50%)}}
+</style>
+</head>
+<body class="min-h-screen bg-white text-gray-900">
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 backdrop-blur border-b bg-white bg-opacity-70">
+  <div class="max-w-6xl mx-auto flex items-center justify-between py-3 px-4">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-2xl bg-gray-900 text-white grid place-items-center font-semibold">Z</div>
+      <span class="font-medium hidden sm:inline">Your Brand</span>
+    </div>
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#about" class="hover:opacity-70">About</a>
+      <a href="#work" class="hover:opacity-70">Showcase</a>
+      <a href="#blog" class="hover:opacity-70">Blog</a>
+      <a href="#contact" class="hover:opacity-70">Contact</a>
+    </div>
+    <button class="bg-gray-900 text-white px-4 py-2 rounded-2xl">Let's talk</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="relative overflow-hidden">
+  <svg class="absolute inset-0 -z-10 w-full h-full" viewBox="0 0 1200 600" aria-hidden>
+    <defs>
+      <radialGradient id="g" cx="50%" cy="40%" r="70%">
+        <stop offset="0%" stop-color="rgb(244 244 245)" />
+        <stop offset="60%" stop-color="rgb(228 228 231)" />
+        <stop offset="100%" stop-color="white" />
+      </radialGradient>
+    </defs>
+    <rect width="1200" height="600" fill="url(#g)" />
+  </svg>
+  <div class="max-w-6xl mx-auto px-4 py-16 md:py-28">
+    <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm">✨ 3D • AR • AI</span>
+    <h1 class="mt-5 text-4xl md:text-6xl font-semibold leading-tight tracking-tight">Ideas that linger.</h1>
+    <p class="mt-5 text-lg md:text-xl text-gray-600">Build worlds you can’t just scroll past. With interactive 3D and tasteful motion, your site gets character—memorable, fast, and accessible in the browser.</p>
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <button class="bg-gray-900 text-white px-6 py-3 rounded-2xl">Start a project →</button>
+      <button class="border border-gray-900 px-6 py-3 rounded-2xl">See the work</button>
+    </div>
+  </div>
+</header>
+
+<!-- CLIENTS MARQUEE -->
+<div class="border-y bg-gray-50 py-6 overflow-hidden">
+  <div class="max-w-6xl mx-auto flex gap-4 animate-[marquee_30s_linear_infinite]" style="white-space: nowrap;">
+    <span class="px-4">KLM</span><span class="px-4">Dior</span><span class="px-4">Campina</span><span class="px-4">Eneco</span><span class="px-4">Tommy</span><span class="px-4">Novartis</span><span class="px-4">Exact</span>
+  </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+  <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">What I focus on</h2>
+  <p class="mt-4 text-gray-600">I craft audiovisual websites and apps that are fast, accessible, and easy to use. Blending <strong>AI</strong>, <strong>AR</strong>, and <strong>3D</strong> for memorable experiences.</p>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section id="blog" class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+  <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">In my own words</h2>
+  <p class="mt-2 text-gray-600">Notes on shipping motion, graphics, and systems that scale.</p>
+</section>
+
+<!-- SHOWCASE -->
+<section id="work" class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+  <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Selected work</h2>
+  <p class="mt-2 text-gray-600">Filter by focus area and explore case studies.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+  <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Let’s meet</h2>
+  <p class="mt-3 text-gray-600">Questions about my work or a project in mind? Reach out—happy to help.</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t bg-gray-50">
+  <div class="max-w-6xl mx-auto py-10 px-4 text-sm">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-2xl bg-gray-900 text-white grid place-items-center font-semibold">Z</div>
+      <span class="font-medium">Your Brand</span>
+    </div>
+    <p class="mt-3 text-gray-600">© 2025 All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
